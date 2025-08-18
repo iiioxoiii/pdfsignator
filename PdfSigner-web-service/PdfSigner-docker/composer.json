@@ -1,0 +1,16 @@
+{
+    "name": "pdf-signer/app",
+    "description": "PDF Digital Signer using SAPP library",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "ddn/sapp": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "PDFSigner\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

@@ -1,0 +1,77 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "17df843cb405801413e7d043e928593f",
+    "packages": [
+        {
+            "name": "ddn/sapp",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dealfonso/sapp.git",
+                "reference": "e96567de7a9826912223304e613092e2640611c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dealfonso/sapp/zipball/e96567de7a9826912223304e613092e2640611c2",
+                "reference": "e96567de7a9826912223304e613092e2640611c2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ddn\\sapp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos A.",
+                    "email": "caralla@upv.es"
+                }
+            ],
+            "description": "Simple and Agnostic PDF Parser (SAPP): Edit, manipulate and sign PDF documents usign PHP",
+            "keywords": [
+                "electronic signature",
+                "pdf",
+                "php",
+                "sign",
+                "signature"
+            ],
+            "support": {
+                "issues": "https://github.com/dealfonso/sapp/issues",
+                "source": "https://github.com/dealfonso/sapp/tree/main"
+            },
+            "funding": [
+                {
+                    "url": "https://paypal.me/caralla",
+                    "type": "custom"
+                }
+            ],
+            "time": "2024-12-19T18:32:34+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "ddn/sapp": 20
+    },
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.4"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
+}

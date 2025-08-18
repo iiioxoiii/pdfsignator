@@ -1,0 +1,3 @@
+# This file ensures the temp directory exists in version control
+# The temp directory is used for temporary file storage during PDF signing
+# All files in this directory are automatically cleaned up after processing
