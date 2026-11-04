@@ -8,6 +8,7 @@ header('Content-Type: application/json');
 
 // Include the SAPP library
 require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/dss.php';
 
 use ddn\sapp\PDFDoc;
 
@@ -91,6 +92,9 @@ try {
     if ($pdfDoc === false) {
         throw new Exception('Failed to parse PDF document. The file may be corrupted or not a valid PDF.');
     }
+
+    // Embed the AOC EC-Ciutadania CA certificate in the PDF DSS before signing.
+    addAocCertificateToDss($pdfDoc, __DIR__ . '/certs/ec-ciutadania.pem');
 
     // Set the certificate for signing
     if (!$pdfDoc->set_signature_certificate($certPath, $certPassword)) {
