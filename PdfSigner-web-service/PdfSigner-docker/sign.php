@@ -3,6 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
+ini_set('max_execution_time', 180);
 
 header('Content-Type: application/json');
 
@@ -93,8 +94,12 @@ try {
         throw new Exception('Failed to parse PDF document. The file may be corrupted or not a valid PDF.');
     }
 
-    // Embed the AOC EC-Ciutadania CA certificate in the PDF DSS before signing.
-    addAocCertificateToDss($pdfDoc, __DIR__ . '/certs/ec-ciutadania.pem');
+    // Embed the signing chain and any validated AOC revocation data before signing.
+    $validationData = collectDssValidationData($certPath, $certPassword, [
+        __DIR__ . '/certs/ec-ciutadania.pem',
+        __DIR__ . '/certs/ec-acc.pem',
+    ]);
+    addDssValidationData($pdfDoc, $validationData);
 
     // Set the certificate for signing
     if (!$pdfDoc->set_signature_certificate($certPath, $certPassword)) {
