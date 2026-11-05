@@ -584,6 +584,8 @@ function fetchVerifiedAocOcsp(
         '-CAfile', $issuerFile,
         '-no_nonce',
         '-timeout', '8',
+        '-validity_period', '300',
+        '-status_age', '300',
     ]);
     $output = $result['output'];
     if (!preg_match('/Response verify OK/i', $output)
